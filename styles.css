@@ -32,3 +32,17 @@ body {
     font-size: 18px;
     color: red;
 }
+#tilt-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+#tilt-button:hover {
+  background-color: #2980b9;
+}
