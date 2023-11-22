@@ -60,8 +60,10 @@ function onClick() {
     // Handle regular non iOS 13+ devices.
     window.addEventListener('devicemotion', handleOrientation);
   }
+  // Optionally, you can hide the button after requesting permission.
+  document.getElementById('tilt-button').style.display = 'none';
 }
-
+    
 function updateDiagnosticDisplay(tiltAngle) {
     // Display tilt angle in the diagnostic display
     document.getElementById('diagnosticDisplay').innerText = `Tilt Angle: ${tiltAngle.toFixed(2)} degrees`;
