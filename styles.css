@@ -1,0 +1,34 @@
+body {
+    background-color: white;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling on mobile devices */
+}
+
+#diagnosticDisplay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-size: 14px;
+}
+
+#imageContainer {
+    display: none; /* Initially hide the image container */
+}
+
+#placeholderImage {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+#desktopMessage {
+    display: none; /* Initially hide the desktop message */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
