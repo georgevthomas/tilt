@@ -25,6 +25,8 @@ function startOrientationListener() {
     window.addEventListener('deviceorientation', handleOrientation);
 }
 
+
+
 function handleOrientation(event) {
     // Get the tilt angle
     var tiltAngle = event.beta; // beta represents the tilt front-to-back
@@ -40,6 +42,24 @@ if (Math.abs(tiltAngle) >= 150 && Math.abs(tiltAngle) <= 180) {
     // Hide images or reset to the initial state
     hideImages();
 }
+}
+
+function onClick() {
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    // Handle iOS 13+ devices.
+    DeviceMotionEvent.requestPermission()
+      .then((state) => {
+        if (state === 'granted') {
+          window.addEventListener('devicemotion', handleOrientation);
+        } else {
+          console.error('Request to access the orientation was rejected');
+        }
+      })
+      .catch(console.error);
+  } else {
+    // Handle regular non iOS 13+ devices.
+    window.addEventListener('devicemotion', handleOrientation);
+  }
 }
 
 function updateDiagnosticDisplay(tiltAngle) {
